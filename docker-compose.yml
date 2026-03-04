@@ -12,8 +12,6 @@ services:
       - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:3000}
       - TEST_DATA_DIR=/data/test-data
-    volumes:
-      - ./test-data:/data/test-data:ro
     restart: unless-stopped
 
   frontend:
