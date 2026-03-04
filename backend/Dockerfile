@@ -6,8 +6,11 @@ WORKDIR /app
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
 # Copy project files
-COPY pyproject.toml .
-COPY src/ src/
+COPY backend/pyproject.toml .
+COPY backend/src/ src/
+
+# Copy test data
+COPY test-data/ /data/test-data/
 
 # Install dependencies
 RUN uv pip install --system --no-cache .

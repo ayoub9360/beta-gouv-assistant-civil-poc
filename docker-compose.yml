@@ -1,9 +1,12 @@
 services:
   backend:
     build:
-      context: ./backend
-    expose:
-      - "8000"
+      context: .
+      dockerfile: backend/Dockerfile
+    # expose:
+    #   - "8000"
+    ports:
+      - "8000:8000"
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o}
@@ -18,8 +21,10 @@ services:
       context: ./frontend
       args:
         - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8000}
-    expose:
-      - "3000"
+    # expose:
+    #   - "3000"
+    ports:
+      - "3000:3000"
     depends_on:
       - backend
     restart: unless-stopped
