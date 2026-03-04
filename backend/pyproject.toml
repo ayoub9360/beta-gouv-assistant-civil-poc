@@ -4,12 +4,12 @@ version = "0.1.0"
 description = "Backend API pour Mon Assistant Civil - Analyse de conclusions juridiques par IA"
 requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.115.0",
-    "uvicorn[standard]>=0.34.0",
-    "python-multipart>=0.0.18",
-    "pymupdf4llm>=0.0.17",
-    "openai>=1.60.0",
-    "pydantic-settings>=2.7.0",
+    "fastapi>=0.128.8",
+    "uvicorn[standard]>=0.39.0",
+    "python-multipart>=0.0.20",
+    "pymupdf4llm>=0.0.27",
+    "openai>=2.24.0",
+    "pydantic-settings>=2.11.0",
 ]
 
 [build-system]
